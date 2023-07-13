@@ -3,24 +3,51 @@ Fortran binding for the GD graphics library [https://libgd.github.io/](https://l
 
 ## Table of Contents
 
-* [Requirements](#requirements)
-* [Compiling](#compiling)
-* [Running the Tests](#running-the-tests)
-* [Using the Library](#using-the-library)
-* [Current status and Aims](#current-status-and-aims)
-* [Image Gallery](#image-gallery)
-  - [Primitive Drawing Operations](#primitive-drawing-operations)
-  - [Font Handling](#font-handling)
-  - [Image Processing](#image-processing)
-  - [Animation](#animation)
+- [fortran-gdlib](#fortran-gdlib)
+  - [Table of Contents](#table-of-contents)
+  - [Requirements](#requirements)
+  - [fpm](#fpm)
+    - [Running the tests using fpm](#running-the-tests-using-fpm)
+  - [Compiling (Makefile)](#compiling-makefile)
+  - [Running the tests](#running-the-tests)
+  - [Documentation](#documentation)
+  - [Using the Library](#using-the-library)
+  - [Current status and aims](#current-status-and-aims)
+  - [Image Gallery](#image-gallery)
+    - [Primitive Drawing Operations](#primitive-drawing-operations)
+    - [Font Handling](#font-handling)
+    - [Image Processing](#image-processing)
+    - [Animation](#animation)
 
 <a name="requirements"></a>
 ## Requirements
 * Fortran-2008 compatible Fortran compiler (tested with gfortran 11)
 * libGD and its dependencies
 
+<a name="fpm"></a>
+## fpm
+fortran-gdlib can be cloned and then built using [fpm](https://github.com/fortran-lang/fpm), following the instructions provided in the documentation available on Fortran Package Manager.
+
+```bash
+git clone https://github.com/gha3mi/fortran-gdlib.git
+cd fortran-gdlib
+fpm install --perfix .
+```
+
+Or you can easily include this package as a dependency in your `fpm.toml` file.
+
+```toml
+[dependencies]
+fortran-gdlib = {git="https://github.com/gha3mi/fortran-gdlib.git"}
+```
+
+### Running the tests using fpm
+```toml
+fpm @gfortran
+```
+
 <a name="compiling"></a>
-## Compiling 
+## Compiling (Makefile)
 Edit the ```Makefile``` such that ist fits both your Fortran environment and your installation of the GD Library.
 The library is then created (along with an example applications) by invoking the ```make``` command.
 
@@ -28,6 +55,13 @@ The library is then created (along with an example applications) by invoking the
 ## Running the tests
 Change to the ```tests``` subdirectory and run the ```run_tests.sh ``` script using the system shell (For Windows there is also a ```unn_tests.bat``` script). The output files can 
 then be found in the ```outpics``` subdirectory of tests.
+
+<a name="documentation"></a>
+## Documentation
+To generate the documentation for the `fortran-gdlib` module using [ford](https://github.com/Fortran-FOSS-Programmers/ford) run the following command:
+```bash
+ford ford.yml
+```
 
 <a name="using-the-library"></a>
 ## Using the Library
