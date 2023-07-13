@@ -7,7 +7,7 @@ program test_analyze_image
   ! Declare the image  
   type(c_ptr)   :: im
 
-  im = gdImageCreateFromFile("inpics/flowers.jpg"//c_null_char)
+  im = gdImageCreateFromFile("test/inpics/flowers.jpg"//c_null_char)
 
   call write_statistics(im)
 
@@ -54,9 +54,9 @@ contains
        enddo
     end do
 
-    redout = gd_fopen('outpics/flowers_red.jpg'//c_null_char,'wb'//c_null_char)
-    greenout = gd_fopen('outpics/flowers_green.jpg'//c_null_char,'wb'//c_null_char)
-    blueout = gd_fopen('outpics/flowers_blue.jpg'//c_null_char,'wb'//c_null_char)
+    redout = gd_fopen('test/outpics/flowers_red.jpg'//c_null_char,'wb'//c_null_char)
+    greenout = gd_fopen('test/outpics/flowers_green.jpg'//c_null_char,'wb'//c_null_char)
+    blueout = gd_fopen('test/outpics/flowers_blue.jpg'//c_null_char,'wb'//c_null_char)
 
     call gdImageJpeg(red,redout, -1_c_int)
     call gdImageJpeg(green,greenout, -1_c_int)

@@ -10,10 +10,10 @@ program test_im_int_array
   integer(c_int), dimension(:,:,:), allocatable :: pixel_array
   integer(c_int):: x_counter, y_counter, greyvalue, closestatus
 
-  in_im = gdImageCreateFromFile("inpics/Scardinius.jpg"//c_null_char)
+  in_im = gdImageCreateFromFile("test/inpics/Scardinius.jpg"//c_null_char)
 
   if (.not. c_associated(in_im)) then
-     write(ERROR_UNIT,*) "Could not load file inpics/Scardinus.jpg"
+     write(ERROR_UNIT,*) "Could not load file test/inpics/Scardinus.jpg"
      stop
   endif
  
@@ -37,7 +37,7 @@ program test_im_int_array
   
   call gdWriteImFromIntArray(out_im, pixel_array, gdImageSx(out_im),gdImageSy(out_im) )
 
-  output_file = gd_fopen('outpics/thanksforthefish.jpg'//c_null_char, 'wb'//c_null_char)
+  output_file = gd_fopen('test/outpics/thanksforthefish.jpg'//c_null_char, 'wb'//c_null_char)
 
   call gdImageJpeg(out_im, output_file, -1_c_int)
 

@@ -21,7 +21,7 @@ program test_fortran_gd
 
   integer(c_int), dimension(0:7) ::imagerect
 
-  imagerect=/0,0,639,0,639,479,0,479/
+  imagerect=(/0,0,639,0,639,479,0,479/)
   
   ! Allocate the image: 640 pixels across by 480 pixels tall  
   im = gdImageCreate(640_c_int, 64_c_int)
@@ -35,14 +35,14 @@ program test_fortran_gd
   white = gdImageColorAllocate(im, 255_c_int, 255_c_int, 255_c_int)
 
   call gdImageStringFT(im, imagerect, white,"/usr/share/fonts/opentype/freefont/FreeSans.otf"//c_null_char , &
-                       40, 0 ,100,100,"KF©ªÀ}ɨɸΘΓӜӅआऍ♣ⵛꔞꔡꔦꔦ𐤕𐤌𐤌"//c_null_char)
+                       40.0d0, 0.0d0 ,100,100,"KF©ªÀ}ɨɸΘΓӜӅआऍ♣ⵛꔞꔡꔦꔦ𐤕𐤌𐤌"//c_null_char)
 
   ! Open a file for writing. "wb" means "write binary", important
   ! under MSDOS, harmless under Unix. */
-  pngout = gd_fopen("test.png"//c_null_char, "wb"//c_null_char)
+  pngout = gd_fopen("test/outpics/test.png"//c_null_char, "wb"//c_null_char)
 
   ! Do the same for a JPEG-format file. *
-  jpegout =  gd_fopen("test.jpeg"//c_null_char, "wb"//c_null_char)
+  jpegout =  gd_fopen("test/outpics/test.jpeg"//c_null_char, "wb"//c_null_char)
 
   ! Output the image to the disk file in PNG format.
   call gdImagePng(im, pngout)

@@ -7,10 +7,10 @@ program animation
   type(c_ptr) ::  my_gif
   type(c_ptr):: src, dst
   integer(c_int) :: angle
-  integer(c_int): :error_code
+  integer(c_int) :: error_code
 
-  src = gdImageCreateFromFile("outpics/smileyguy.png"//c_null_char)
-  my_gif = gd_fopen("outpics/animation.gif"//c_null_char)
+  src = gdImageCreateFromFile("test/outpics/smileyguy.png"//c_null_char)
+  my_gif = gd_fopen("test/outpics/animation.gif"//c_null_char)
   call gdImageGifAnimBegin(dest, my_gif,1_c_int, -1_c_int)
 
   do angle=0,360

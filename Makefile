@@ -20,52 +20,52 @@ REMOVE = rm
 
 MODULEPATH = -I .
 
-LIBGD_H_WRAPPER_C = libgd_h_wrapper.c
-LIBGD_H_WRAPPER_OBJ = libgd_f_wrapper$(OBJEXT)
+LIBGD_H_WRAPPER_C = src/libgd_h_wrapper.c
+LIBGD_H_WRAPPER_OBJ = src/libgd_f_wrapper$(OBJEXT)
 
-FORTRAN_LIBGD_F90 = fortran_libgd.f90
-FORTRAN_LIBGD_MOD = fortran_libgd$(MODEXT)
-FORTRAN_LIBDG_OBJ = fortran_libgd$(OBJEXT)
+FORTRAN_LIBGD_F90 = src/fortran_libgd.f90
+FORTRAN_LIBGD_MOD = src/fortran_libgd$(MODEXT)
+FORTRAN_LIBDG_OBJ = src/fortran_libgd$(OBJEXT)
 
-TEST_FORTRAN_GD_F90 = tests/test_fortran_gd.f90
-TEST_FORTRAN_GD_OBJ = tests/test_fortran_gd$(OBJEXT)
-TEST_FORTRAN_GD_EXE = tests/test_fortran_gd$(EXEEXT)
+TEST_FORTRAN_GD_F90 = test/test_fortran_gd.f90
+TEST_FORTRAN_GD_OBJ = test/test_fortran_gd$(OBJEXT)
+TEST_FORTRAN_GD_EXE = test/test_fortran_gd$(EXEEXT)
 
-TEST_FORTRAN_GD_EXTENDED_F90 = tests/test_fortran_gd_extended.f90
-TEST_FORTRAN_GD_EXTENDED_OBJ = tests/test_fortran_gd_extended$(OBJEXT)
-TEST_FORTRAN_GD_EXTENDED_EXE = tests/test_fortran_gd_extended$(EXEEXT)
+TEST_FORTRAN_GD_EXTENDED_F90 = test/test_fortran_gd_extended.f90
+TEST_FORTRAN_GD_EXTENDED_OBJ = test/test_fortran_gd_extended$(OBJEXT)
+TEST_FORTRAN_GD_EXTENDED_EXE = test/test_fortran_gd_extended$(EXEEXT)
 
-TEST_POLYGON_F90 = tests/test_polygon.f90
-TEST_POLYGON_OBJ = tests/test_polygon$(OBJEXT)
-TEST_POLYGON_EXE = tests/test_polygon$(EXEEXT)
+TEST_POLYGON_F90 = test/test_polygon.f90
+TEST_POLYGON_OBJ = test/test_polygon$(OBJEXT)
+TEST_POLYGON_EXE = test/test_polygon$(EXEEXT)
 
-TEST_ALL_COLORS_F90 = tests/test_all_colors.f90
-TEST_ALL_COLORS_OBJ = tests/test_all_colors$(OBJEXT)
-TEST_ALL_COLORS_EXE = tests/test_all_colors$(EXEEXT)
+TEST_ALL_COLORS_F90 = test/test_all_colors.f90
+TEST_ALL_COLORS_OBJ = test/test_all_colors$(OBJEXT)
+TEST_ALL_COLORS_EXE = test/test_all_colors$(EXEEXT)
 
-TEST_FONTS_F90 = tests/test_fonts.f90
-TEST_FONTS_OBJ = tests/test_fonts$(OBJEXT)
-TEST_FONTS_EXE = tests/test_fonts$(EXEEXT)
+TEST_FONTS_F90 = test/test_fonts.f90
+TEST_FONTS_OBJ = test/test_fonts$(OBJEXT)
+TEST_FONTS_EXE = test/test_fonts$(EXEEXT)
 
-TEST_ANALYZE_IMAGE_F90 = tests/test_analyze_image.f90
-TEST_ANALYZE_IMAGE_OBJ = tests/test_analyze_image$(OBJEXT)
-TEST_ANALYZE_IMAGE_EXE = tests/test_analyze_image$(EXEEXT)
+TEST_ANALYZE_IMAGE_F90 = test/test_analyze_image.f90
+TEST_ANALYZE_IMAGE_OBJ = test/test_analyze_image$(OBJEXT)
+TEST_ANALYZE_IMAGE_EXE = test/test_analyze_image$(EXEEXT)
 
-TEST_EDGE_F90 = tests/test_edge.f90
-TEST_EDGE_OBJ = tests/test_edge$(OBJEXT)
-TEST_EDGE_EXE = tests/test_edge$(EXEEXT)
+TEST_EDGE_F90 = test/test_edge.f90
+TEST_EDGE_OBJ = test/test_edge$(OBJEXT)
+TEST_EDGE_EXE = test/test_edge$(EXEEXT)
 
-TEST_EDGE_F90 = tests/test_edge.f90
-TEST_EDGE_IMAGE_OBJ = tests/test_edge$(OBJEXT)
-TEST_EDGE_EXE = tests/test_edge$(EXEEXT)
+TEST_EDGE_F90 = test/test_edge.f90
+TEST_EDGE_IMAGE_OBJ = test/test_edge$(OBJEXT)
+TEST_EDGE_EXE = test/test_edge$(EXEEXT)
 
-TEST_ANIMATION_F90 = tests/test_animation.f90
-TEST_ANIMATION_OBJ = tests/test_animation$(OBJEXT)
-TEST_ANIMATION_EXE = tests/test_animation$(EXEEXT)
+TEST_ANIMATION_F90 = test/test_animation.f90
+TEST_ANIMATION_OBJ = test/test_animation$(OBJEXT)
+TEST_ANIMATION_EXE = test/test_animation$(EXEEXT)
 
-TEST_IM_INT_ARRAY_F90 = tests/test_im_int_array.f90
-TEST_IM_INT_ARRAY_OBJ = tests/test_im_int_array$(OBJEXT)
-TEST_IM_INT_ARRAY_EXE = tests/test_im_int_array$(EXEEXT)
+TEST_IM_INT_ARRAY_F90 = test/test_im_int_array.f90
+TEST_IM_INT_ARRAY_OBJ = test/test_im_int_array$(OBJEXT)
+TEST_IM_INT_ARRAY_EXE = test/test_im_int_array$(EXEEXT)
 
 FORTRAN_LIBGD_ARCHIVE = fortran_libgd$(ARCHIVEEXT)
 FORTRAN_LIBGD_SHARED = fortran_libgd$(SHAREDEXT)
@@ -136,7 +136,7 @@ $(TEST_IM_INT_ARRAY_OBJ): $(FORTRAN_LIBGD_MOD) $(TEST_IM_INT_ARRAY_F90)
 $(FORTRAN_LIBGD_OBJ): $(FORTRAN_LIBGD_MOD) 
 
 $(FORTRAN_LIBGD_MOD): $(FORTRAN_LIBGD_F90)
-	$(FORTRAN) $(NOCOMPILE) fortran_libgd.f90
+	$(FORTRAN) $(NOCOMPILE) src/fortran_libgd.f90
 
 $(LIBGD_H_WRAPPER_OBJ): $(LIBGD_H_WRAPPER_C)
 	$(CC) $(NOCOMPILE) $(LIBGD_H_WRAPPER_C)
@@ -148,14 +148,14 @@ $(FORTRAN_LIBGD_SHARED):  $(FORTRAN_LIBGD_OBJ) $(LIBGD_H_WRAPPER_OBJ)
 	$(SHAREDARCHIVER) *$(OBJEXT) $(CREATESHARED) $(CREATEOBJECT) $(FORTRAN_LIBGD_SHARED)
 
 clean:
-	$(REMOVE) *$(OBJEXT) *$(MODEXT) *$(ARCHIVEEXT) \
+	$(REMOVE) *$(OBJEXT) *$(MODEXT) *$(ARCHIVEEXT) *$(SHAREDEXT) \
 	$(TEST_FORTRAN_GD_EXE) $(TEST_FORTRAN_GD_OBJ)  \
-	$(TEST_FORTRAN_GD_EXTENDED_EXE) $(TEST_FORTRAN_GD_EXTENDED_EXE) \
+	$(TEST_FORTRAN_GD_EXTENDED_EXE) $(TEST_FORTRAN_GD_EXTENDED_OBJ) \
 	$(TEST_POLYGON_EXE) $(TEST_POLYGON_OBJ) \
 	$(TEST_ALL_COLORS_EXE) $(TEST_ALL_COLORS_OBJ) \
 	$(TEST_FONTS_EXE) $(TEST_FONTS_OBJ) \
 	$(TEST_ANALYZE_IMAGE_EXE) $(TEST_ANALYZE_IMAGE_OBJ) \
 	$(TEST_EDGE_EXE) $(TEST_EDGE_OBJ)  \
 	$(TEST_ANIMATION_EXE) $(TEST_ANIMATION_OBJ) \
-        $(TEST_IM_INT_ARRAY_EXE) $(TEST_IM_INT_ARRAY_OBJ) \
-        tests/outpics/*
+	$(TEST_IM_INT_ARRAY_EXE) $(TEST_IM_INT_ARRAY_OBJ) \
+	test/outpics/*

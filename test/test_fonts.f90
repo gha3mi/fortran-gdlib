@@ -39,9 +39,9 @@ program test_fortran_gd
   call gdImageStringFT(im, imagerect, yellow,"/usr/share/fonts/opentype/freefont/FreeMono.otf"//c_null_char , &
        25._c_double, +0.3_c_double ,10,400,"KF©ªÀ}ɨɸΘΓӜӅआऍ♣ⵛꔞꔡꔦꔦ𐤕𐤌𐤌"//c_null_char)
 
-  pngout = gd_fopen("outpics/tf_font.png"//c_null_char, "wb"//c_null_char)
+  pngout = gd_fopen("test/outpics/tf_font.png"//c_null_char, "wb"//c_null_char)
 
-  jpegout =  gd_fopen("outpics/tf_font.jpeg"//c_null_char, "wb"//c_null_char)
+  jpegout =  gd_fopen("test/outpics/tf_font.jpeg"//c_null_char, "wb"//c_null_char)
 
   ! Output the image to the disk file in PNG format.
   call gdImagePng(im, pngout)

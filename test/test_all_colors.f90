@@ -20,7 +20,7 @@ program test_all_colors
  
   im = gdImageCreateTrueColor(4096_c_int, 4096_c_int)
 
-  pngout = gd_fopen('outpics/all_colors.png'//c_null_char, 'w'//c_null_char)
+  pngout = gd_fopen('test/outpics/all_colors.png'//c_null_char, 'w'//c_null_char)
   
   do ycounter = 0, 4097
      do xcounter = 0, 4097

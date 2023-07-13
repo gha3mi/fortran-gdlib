@@ -1,0 +1,12 @@
+project:             fortran-gdlib
+src_dir:             ./src
+output_dir:          ./doc
+source:              true
+graph:               true
+coloured_edges:      true
+search:              true
+display:             public
+                     private
+                     protected
+print_creation_date: true
+

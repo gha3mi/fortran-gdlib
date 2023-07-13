@@ -1,0 +1,2 @@
+@gfortran
+options test --compiler gfortran --flag "-O0 -g -fbacktrace -fPIC -lgd -lpng -lz -ljpeg -lfreetype -lm"

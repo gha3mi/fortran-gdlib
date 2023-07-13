@@ -1,12 +1,5 @@
-! This is just a "translation" of the cfirst example of the GD lib C
-! documentation at https://libgd.github.io/manuals/2.3.3/files/preamble-txt.html
-! to the Fortran language
-!
-! All bugs are my own
-
-program test_fortran_gd
-  use, intrinsic iso_c_binding,  only: c_ptr, c_int, c_null_char, c_associated
-  use, intrinsic iso_fortran_env, only: error_unit
+program test_fortran_gd_extended
+  use, intrinsic:: iso_c_binding,  only: c_ptr, c_int, c_null_char
   use fortran_libgd
   implicit none
 
@@ -71,17 +64,10 @@ program test_fortran_gd
   
   
 
-  pngout = gd_fopen("outpics/test_extended.png"//c_null_char, "wb"//c_null_char)
-  if(.not. c_associated (pngout)) then
-     write(error_unit,*) 'Error: Could not open inpics/test_extended.png. '
-  endif
+  pngout = gd_fopen("test/outpics/test_extended.png"//c_null_char, "wb"//c_null_char)
 
 
-  jpegout =  gd_fopen("outpics/test_extended.jpg"//c_null_char, "wb"//c_null_char)
-  if(.not. c_associated (jpegout)) then
-     write(error_unit,*) 'Error: Could not open inpics/test_extended.jpg.'
-  endif
-  
+  jpegout =  gd_fopen("test/outpics/test_extended.jpeg"//c_null_char, "wb"//c_null_char)
 
   call gdImagePng(im, pngout)
  
@@ -95,4 +81,4 @@ program test_fortran_gd
 
    
   
-end program test_fortran_gd
+end program test_fortran_gd_extended

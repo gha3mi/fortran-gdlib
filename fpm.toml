@@ -1,0 +1,77 @@
+name = "fortran-gdlib"
+[build]
+auto-executables = false
+auto-tests = false
+auto-examples = false
+module-naming = false
+[install]
+library = false
+[fortran]
+implicit-typing = false
+implicit-external = false
+source-form = "free"
+
+# [[test]]
+# name       = "animation"
+# source-dir = "test"
+# main       = "animation.f90"
+
+[[test]]
+name       = "polygon"
+source-dir = "test"
+main       = "polygon.f90"
+
+[[test]]
+name       = "test_all_colors"
+source-dir = "test"
+main       = "test_all_colors.f90"
+
+[[test]]
+name       = "test_analyze_image"
+source-dir = "test"
+main       = "test_analyze_image.f90"
+
+[[test]]
+name       = "test_animation"
+source-dir = "test"
+main       = "test_animation.f90"
+
+[[test]]
+name       = "test_edge"
+source-dir = "test"
+main       = "test_edge.f90"
+
+[[test]]
+name       = "test_fonts"
+source-dir = "test"
+main       = "test_fonts.f90"
+
+[[test]]
+name       = "test_fortran_gd_extended"
+source-dir = "test"
+main       = "test_fortran_gd_extended.f90"
+
+[[test]]
+name       = "test_fortran_gd_fonts"
+source-dir = "test"
+main       = "test_fortran_gd_fonts.f90"
+
+[[test]]
+name       = "test_fortran_gd"
+source-dir = "test"
+main       = "test_fortran_gd.f90"
+
+[[test]]
+name       = "test_im_int_array"
+source-dir = "test"
+main       = "test_im_int_array.f90"
+
+[[test]]
+name       = "test_polygon"
+source-dir = "test"
+main       = "test_polygon.f90"
+
+[[test]]
+name       = "tf_fonts"
+source-dir = "test"
+main       = "tf_fonts.f90"

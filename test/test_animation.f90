@@ -9,8 +9,8 @@ program animation
   integer(c_int) :: angle
   integer(c_int) :: error_code
 
-  source_png = gd_fopen("inpics/smileyguy.png"//c_null_char, "rb"//c_null_char)
-  my_gif     = gd_fopen("outpics/animation.gif"//c_null_char, "wb"//c_null_char)
+  source_png = gd_fopen("test/inpics/smileyguy.png"//c_null_char, "rb"//c_null_char)
+  my_gif     = gd_fopen("test/outpics/animation.gif"//c_null_char, "wb"//c_null_char)
   src        = gdImageCreateFromPng(source_png)
   
   do angle=0_c_int, 360_c_int

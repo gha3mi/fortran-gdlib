@@ -34,9 +34,9 @@ program test_polygon
   
   giant      = gdFontGetGiant()
   
-  pngout = gd_fopen("outpics/polygon.png"//c_null_char, "wb"//c_null_char)
+  pngout = gd_fopen("test/outpics/polygon.png"//c_null_char, "wb"//c_null_char)
   if(.not. c_associated (pngout)) then
-     write(error_unit,*) 'Error: Could not open inpics/test_extended.png. '
+     write(error_unit,*) 'Error: Could not open test/inpics/test_extended.png. '
   endif
 
   do fromcounter = 0,corners-1
