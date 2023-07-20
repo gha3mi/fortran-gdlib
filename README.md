@@ -31,7 +31,7 @@ fortran-gdlib can be cloned and then built using [fpm](https://github.com/fortra
 ```bash
 git clone https://github.com/gha3mi/fortran-gdlib.git
 cd fortran-gdlib
-fpm install --perfix .
+fpm install --prefix .
 ```
 
 Or you can easily include this package as a dependency in your `fpm.toml` file.
